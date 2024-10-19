@@ -25,8 +25,39 @@ Ideally this should be played on a mobile device using touch interactions. But i
 - The player will loose the game if the points saldo reaches 0. 
 - The player will win the gami if the points saldo reaches 100.
 
+### Programming lanuges used
+HTML, CSS, and JavaScript. The JavaScript will be developed using classes and OOP
+
 ### 3. To-dos
+1. Set up the html, css and js structure
+2. Define the game area and the fret board (ukulele area) using relative sizing
+3. Set up the fretboard from the array (Class FretBoard) and add evenListeners
+4. Get the valid positions from the pentatonic scale (Class PentatonicScale)
+5. Set up the logic for the the played notes mathing the valid pentatonicScale 
+
 ### 4. OOP Organisation
+#### Classes
+**BluesGame**
+This is the game object that holds the general game properties like points, selected Key etc.
+**FretBoardPosition**
+Including static object
+```javascript
+[
+{note: "C", positionX: 1, positionY: 1, sound: "src for sound"},
+{etc.}
+]
+```
+**PentatonicScale**
+Including static object
+```javascript
+{
+    "C": ["C", "D", "E", "G", "A"]
+}
+```
+**ScoreBoard**
+**Message**
+
+
 ### 5. Start Coding
 
 ## Description
