@@ -25,25 +25,35 @@ Ideally this should be played on a mobile device using touch interactions. But i
 - The player will loose the game if the points saldo reaches 0. 
 - The player will win the gami if the points saldo reaches 100.
 
+**First lo fi wireframes of start screen and game screen**
+
+<img src="./wireframes/start.png" width="200" alt="Start screen">
+<img src="./wireframes/game.png" width="200" alt="Game screen">
+
+
 ### Programming lanuges used
 HTML, CSS, and JavaScript. The JavaScript will be developed using classes and OOP
 
 ### 3. To-dos
-1. Set up the html, css and js structure
-2. Define the game area and the fret board (ukulele area) using relative sizing
-3. Set up the fretboard from the array (Class FretBoard) and add evenListeners
-4. Get the valid positions from the pentatonic scale (Class PentatonicScale)
-5. Set up the logic for the the played notes mathing the valid pentatonicScale 
+
+To-dos are managed in Trello but the below list will give an overview of the steps included in the process.
+
+1. Lo fi wireframe of the game
+2. Set up the html, css and js structure
+3. Define the game area and the fret board (ukulele area) using relative sizing
+4. Create the needed data files, arrays with objects
+4. Set up the fretboard from the array (Class FretBoard) and add evenListeners
+5. Get the valid positions from the pentatonic scale (Class PentatonicScale)
+6. Set up the logic for the the played notes mathing the valid pentatonic scale. 
 
 ### 4. OOP Organisation
 #### Classes
 **BluesGame**
 This is the game object that holds the general game properties like points, selected Key etc.
-**FretBoardPosition**
-Including static object
+**FretBoard**
 ```javascript
 [
-{note: "C", positionX: 1, positionY: 1, sound: "src for sound"},
+{note: "C", positionY: 1, positionX: 1, sound: "src for sound"},
 {etc.}
 ]
 ```
