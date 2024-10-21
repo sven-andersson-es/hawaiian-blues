@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+	align-content: center;
+	align-items: center;
+}
+
+main {
+	height: 90vh;
+    width: 60vh;
+}
+#uke-head {
+	border: 2px solid red;
+	width: 100%;
+}
+#fret-board {
+	border: 2px solid red;
+	width: 100%;
+}
