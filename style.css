@@ -13,13 +13,22 @@ body {
 
 main {
 	height: 90vh;
-    width: 60vh;
+    width: 60vw;
 }
 #uke-head {
 	border: 2px solid red;
 	width: 100%;
+    height: 20%;
 }
 #fret-board {
 	border: 2px solid red;
 	width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+#fret-board > div {
+    background: blue;
+    border: 1px solid white;
 }
