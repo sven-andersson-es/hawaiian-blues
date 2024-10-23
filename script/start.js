@@ -20,4 +20,4 @@ class StartGame {
 	}
 }
 
-const startGame = new StartGame(fretBoardData, "C", "game");
+const startGame = new StartGame(fretBoardData, "C", "learn");
