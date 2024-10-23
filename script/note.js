@@ -1,9 +1,10 @@
 class Note {
-	constructor(scale, note, sound, mode) {
+	constructor(scale, note, sound, mode, game) {
         this.scale = scale;
         this.note = note;
         this.sound = sound;
         this.mode = mode;
+        this.game = game;
 		this.element = document.createElement("div");
 		this.element.classList.add(this.note);
         if (this.mode === "learn" && this.scale.validNotes.indexOf(this.note) !== -1) {
@@ -20,7 +21,7 @@ class Note {
             this.stringSound.play();
             if (this.scale.validNotes.indexOf(this.note) === -1) {
                 console.log("Wrong note!");
-                
+                this.game.addPoints(-1);
             }
         });
 	}
