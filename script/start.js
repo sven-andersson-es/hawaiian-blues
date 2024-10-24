@@ -10,7 +10,7 @@ class StartGame {
 		this.backTrackFile = this.pentatonicScale.backTrackFile;
 		this.backTrack = new Audio("./sound/" + this.backTrackFile);
 		this.backTrack.setAttribute("preload", "auto");
-		this.backTrack.playbackRate = 8;
+		this.backTrack.playbackRate = 1;
 		this.backTrack.play();
 		this.backTrack.addEventListener(
 			"ended",
@@ -29,5 +29,3 @@ class StartGame {
 		});
 	}
 }
-
-const startGame = new StartGame(fretBoardData, "C", "learn");
