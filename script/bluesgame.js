@@ -4,11 +4,15 @@
 
 class BluesGame {
     static gameScore = {
-        points: 10,
+        points: 0,
         rounds: 0,
     }
-    constructor() {
+    constructor(startPoints,startRounds) {
         this.gameOver = false;
+        this.startPoints = startPoints;
+        this.startRounds = startRounds;
+        BluesGame.gameScore.points = this.startPoints;
+        BluesGame.gameScore.rounds = this.startRounds;
     }
     addPoints(point){
         BluesGame.gameScore.points += point;
