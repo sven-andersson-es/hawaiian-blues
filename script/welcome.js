@@ -48,6 +48,7 @@ class Welcome {
 			optionElement.setAttribute("type", "radio");
 			optionElement.setAttribute("name", "mode");
 			optionElement.setAttribute("value", element.mode);
+			optionElement.setAttribute("id", element.mode);
 			optionElement.setAttribute("index", index);
 			if (index === 0) {
 				optionElement.setAttribute("checked", "checked");
@@ -61,7 +62,7 @@ class Welcome {
 		});
 
 		this.form.appendChild(this.selectMode);
-        console.log(this.form);
+        //console.log(this.form);
         
 
 		//play button

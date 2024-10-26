@@ -23,8 +23,8 @@ class StartGame {
 			},
 			false
 		);
-		this.game = new BluesGame(10, 1, this.backTrack);
-		console.log(this.game);
+		this.game = new BluesGame(10, 1, this.backTrack, this.mode);
+		//console.log(this.game);
 
 		fretBoard.element.classList.add("grid");
 
