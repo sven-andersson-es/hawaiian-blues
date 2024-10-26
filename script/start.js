@@ -17,7 +17,7 @@ class StartGame {
 				this.backTrack.play();
 				this.game.addRounds(1);
                 this.game.ukeHead.updateRoundsBoard(BluesGame.gameScore.rounds);
-				if (BluesGame.gameScore.rounds % 5 === 0) {
+				if (BluesGame.gameScore.rounds % 2 === 0) {
 					this.game.addPoints(5);
                     this.game.ukeHead.updatePointsBoard(BluesGame.gameScore.points);
 					console.log("You made 5 rounds and you got 5 extra points!");

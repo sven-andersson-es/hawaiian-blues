@@ -46,8 +46,9 @@ class BluesGame {
             fretBoard.element.appendChild(gameOverDivRounds)
             fretBoard.element.appendChild(gameOverButton)
 
-
-			//getWelcomeScreen();
+            gameOverButton.addEventListener("click", () => {
+                getWelcomeScreen();
+            });
 		}
 	}
 	addPoints(point) {
