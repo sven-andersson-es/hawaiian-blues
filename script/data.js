@@ -42,9 +42,8 @@ const fretBoardData = [
 ];
 
 const pentatonicScaleData = {
-    "C": {
-        scale: ["C", "D", "E", "G", "A"],
-        backTrack: "c-back-track-01.mp3"
-    
-    }
-}
+	C: {
+		scale: ["C", "D", "E", "G", "A"],
+		backTrack: "c-back-track-01.mp3",
+	},
+};

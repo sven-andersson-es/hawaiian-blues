@@ -1,6 +1,5 @@
 class Head {
-    constructor() {
-        this.element = document.getElementById("uke-head")
-        
-    }
+	constructor() {
+		this.element = document.getElementById("uke-head");
+	}
 }
