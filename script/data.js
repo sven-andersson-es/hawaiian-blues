@@ -41,6 +41,11 @@ const fretBoardData = [
 	{ note: "G", positionY: 10, positionX: 4, sound: "10-4.mp3" },
 ];
 
+const availableKeys = [
+	{key: "C", description: "C Major"},
+	{key: "E", description: "E Major"},
+]
+
 const pentatonicScaleData = {
 	C: {
 		scale: ["C", "D", "E", "G", "A"],
