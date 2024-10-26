@@ -32,7 +32,7 @@ main {
 	row-gap: 0;
 	column-gap: 0;
 }
-#fret-board > div {
+#fret-board.grid > div {
 	background: blue;
 	border: 1px solid white;
 }
