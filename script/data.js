@@ -49,6 +49,6 @@ const availableKeys = [
 const pentatonicScaleData = {
 	C: {
 		scale: ["C", "D", "E", "G", "A"],
-		backTrack: "c-back-track-01.mp3",
+		backTrack: "c-back-track-02.mp3",
 	},
 };

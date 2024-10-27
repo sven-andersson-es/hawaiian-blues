@@ -4,33 +4,37 @@ class Head {
 		this.element = document.getElementById("uke-head");
 		console.log("New Class Head initiated");
 
-		this.pointsBoard = document.createElement("div");
-		this.pointsBoard.classList.add("points-board");
-		this.element.appendChild(this.pointsBoard);
+		this.creditsBoard = document.createElement("div");
+		this.creditsBoard.classList.add("credits-board");
+		this.element.appendChild(this.creditsBoard);
 
 		this.roundsBoard = document.createElement("div");
 		this.roundsBoard.classList.add("rounds-board");
 		this.element.appendChild(this.roundsBoard);
 
-		this.messageBoard = document.createElement("div");
-		this.messageBoard.classList.add("message-board");
-		document.body.appendChild(this.messageBoard);
+		if (!document.querySelector(".message-board")) {
+			this.messageBoard = document.createElement("div");
+			this.messageBoard.classList.add("message-board");
+			document.body.appendChild(this.messageBoard);
+		} else {
+            this.messageBoard = document.querySelector(".message-board");
+        }
 	}
-	updatePointsBoard(points) {
-		this.pointsBoard.innerText = points;
-		this.pointsBoard.classList.add("add-points");
+	updateCreditsBoard(credits) {
+		this.creditsBoard.innerText = credits;
+		this.creditsBoard.classList.add("add-credits");
 		setTimeout(() => {
-			this.pointsBoard.classList.remove("add-points");
-		}, 700);
-        console.log(points);
+			this.creditsBoard.classList.remove("add-credits");
+		}, 1700);
+		console.log(credits);
 	}
 	updateRoundsBoard(rounds) {
 		this.roundsBoard.innerText = rounds;
 		this.roundsBoard.classList.add("add-rounds");
 		setTimeout(() => {
 			this.roundsBoard.classList.remove("add-rounds");
-		}, 700);
-        console.log(rounds);
+		}, 1700);
+		console.log(rounds);
 	}
 	updateMessageBoard(message) {
 		this.messageBoard.innerText = message;
@@ -38,7 +42,6 @@ class Head {
 		setTimeout(() => {
 			this.messageBoard.classList.remove("add-message");
 		}, 1700);
-        console.log(message);
-        
+		console.log(message);
 	}
 }

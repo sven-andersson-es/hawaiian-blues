@@ -1,33 +1,33 @@
 class BluesGame {
 	static gameScore = {
-		points: 0,
+		credits: 0,
 		rounds: 0,
 	};
-	constructor(startPoints, startRounds, backTrack, mode) {
+	constructor(startCredits, startRounds, backTrack, mode) {
 		this.gameOver = false;
-		this.startPoints = startPoints;
+		this.startCredits = startCredits;
 		this.startRounds = startRounds;
 		this.backTrack = backTrack;
 		this.mode = mode;
-		BluesGame.gameScore.points = this.startPoints;
+		BluesGame.gameScore.credits = this.startCredits;
 		BluesGame.gameScore.rounds = this.startRounds;
 		this.ukeHead = new Head(this.mode);
-		this.ukeHead.pointsBoard.innerText = this.startPoints;
+		this.ukeHead.creditsBoard.innerText = this.startCredits;
 		this.ukeHead.roundsBoard.innerText = this.startRounds;
 		console.log("BluesGame");
-        
+
 		this.secondsSinceLastPick = 0;
 		this.lastPickInterval = setInterval(() => {
 			this.secondsSinceLastPick += 1;
 			console.log(this.secondsSinceLastPick);
 			if (this.secondsSinceLastPick % 5 === 0) {
-				this.addPoints(-1);
-				this.ukeHead.updateMessageBoard("You are playing to slow, -1 point.");
+				this.addCredits(-1);
+				this.ukeHead.updateMessageBoard("You are playing to slow, -1 credit.");
 			}
 		}, 1000);
 	}
 	gameOverTest() {
-		if (BluesGame.gameScore.points <= 0) {
+		if (BluesGame.gameScore.credits <= 0) {
 			console.log("Game Over!!");
 			this.gameOver = true;
 			this.backTrack.pause();
@@ -38,7 +38,7 @@ class BluesGame {
 			const gameOverDivMessage = document.createElement("div");
 			const gameOverDivRounds = document.createElement("div");
 			const gameOverButton = document.createElement("button");
-			const gameOverMessage = `You have no points left and the game is over.`;
+			const gameOverMessage = `You have no credits left and the game is over.`;
 			const finalRounds = BluesGame.gameScore.rounds;
 			console.log(finalRounds);
 
@@ -63,9 +63,9 @@ class BluesGame {
 			});
 		}
 	}
-	addPoints(point) {
-		BluesGame.gameScore.points += point;
-		this.ukeHead.updatePointsBoard(BluesGame.gameScore.points);
+	addCredits(credit) {
+		BluesGame.gameScore.credits += credit;
+		this.ukeHead.updateCreditsBoard(BluesGame.gameScore.credits);
 		this.gameOverTest();
 	}
 	addRounds(round) {

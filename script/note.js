@@ -19,14 +19,24 @@ class Note {
 		this.stringSound = new Audio("./sound/" + sound);
 		this.stringSound.setAttribute("preload", "auto");
 		fretBoard.element.appendChild(this.element);
-		this.element.addEventListener("click", () => {
-			
+        //detect if the device is touch enabled and set the correct listener for the not
+        let listenerType = "mousedown"
+        if(window.matchMedia("(pointer: coarse)").matches) {
+            listenerType = "touchstart"
+        }
+		this.element.addEventListener(listenerType, (event) => {
+			//prevent double touch zoom in safari
+            if (event.scale !== 1) event.preventDefault();
             this.game.secondsSinceLastPick = 0
+            this.element.classList.add("string-down");
+		setTimeout(() => {
+			this.element.classList.remove("string-down");
+		}, 800);
             this.stringSound.load();
 			this.stringSound.play();
 			if (this.scale.validNotes.indexOf(this.note) === -1) {
 				console.log("Wrong note!");
-				this.game.addPoints(-1);
+				this.game.addCredits(-1);
 			}
 
 		});
