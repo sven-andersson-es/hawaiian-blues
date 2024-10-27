@@ -36,3 +36,11 @@ main {
 	background: blue;
 	border: 1px solid white;
 }
+
+.message-board {
+    display: none;
+    &.add-message {
+        display: block;
+        
+    }
+}

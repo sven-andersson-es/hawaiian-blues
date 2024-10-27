@@ -20,12 +20,15 @@ class Note {
 		this.stringSound.setAttribute("preload", "auto");
 		fretBoard.element.appendChild(this.element);
 		this.element.addEventListener("click", () => {
-			this.stringSound.load();
+			
+            this.game.secondsSinceLastPick = 0
+            this.stringSound.load();
 			this.stringSound.play();
 			if (this.scale.validNotes.indexOf(this.note) === -1) {
 				console.log("Wrong note!");
 				this.game.addPoints(-1);
 			}
+
 		});
 	}
 }
