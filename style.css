@@ -86,11 +86,15 @@ body {
 	align-items: center;
 	height: 100dvh;
 	background-color: aqua;
-	background-image: url(./image/body-bg-bottom-right.svg),
+	background-image: 
+		url(./image/body-bg-bottom-right.svg),
 		url(./image/body-bg-bottom-left.svg);
 	background-position: bottom right, bottom left;
 	background-size: 30dvh auto;
 	background-repeat: no-repeat, no-repeat;
+}
+@media (width > 600px) {
+
 }
 
 main {
@@ -106,15 +110,120 @@ main {
 	row-gap: 0;
 	column-gap: 0;
 }
+
+.message-board {
+	font-family: "digital numbers", sans-serif;
+	font-size: 0.65em;
+	padding: 0.55em;
+	border-radius: 1em;
+	text-align: center;
+	color: red;
+	background: #000;
+	visibility: hidden;
+	position: fixed;
+	top: 35px;
+}
+
+.add-message {
+	visibility: visible;
+	animation: fadein 0.5s, fadeout 0.7s 2.0s;
+}
+
+@keyframes fadein {
+	from {
+		top: 0;
+		opacity: 0;
+	}
+	to {
+		top: 35px;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeout {
+	from {
+		top: 35px;
+		opacity: 1;
+	}
+	to {
+		top: 0;
+		opacity: 0;
+	}
+}
+
 #uke-head {
 	/* border: 2px solid red; */
+	font-size: 0.8em;
 	width: 100%;
 	height: 100%;
 	background-image: url(./image/head-center.png);
 	background-size: auto var(--head-height-mobile);
 	background-repeat: no-repeat;
 	background-position: center bottom;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* align-items: center; */
 }
+.logo {
+	margin-top: 10%;
+	align-self: center;
+	display: flex;
+	justify-content: center;
+}
+.logo img {
+	width: 80%;
+	height: auto;
+}
+.displays {
+	/* align-self: center; */
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 5%;
+}
+.displays .display-circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 4em;
+	height: 4em;
+	border-radius: 50%;
+	box-shadow: inset -4px -4px 6px 6px rgba(129, 0, 0, 0.8);
+	border: 4px solid white;
+	background-color: #000;
+}
+.displays .display-wrapper {
+	text-align: center;
+}
+.displays .display-title {
+	font-size: 0.7em;
+	line-height: 1;
+	font-weight: 700;
+	color: #000;
+}
+
+.displays .display-circle span {
+	font-family: "digital numbers", sans-serif;
+	font-size: 1.6em;
+	color: red;
+}
+.displays .display-circle span.add-credits,
+.displays .display-circle span.add-rounds {
+	animation: scoreBoardGlimmer 500ms ease-in-out;
+}
+
+@keyframes scoreBoardGlimmer {
+	0% {
+		color: red;
+	}
+	50% {
+		color: rgb(129, 0, 0);
+	}
+	100% {
+		color: red;
+	}
+}
+
 .head-left {
 	background-image: url(./image/head-left.png);
 	background-size: auto var(--head-height-mobile);
@@ -130,11 +239,18 @@ main {
 @media (width > 600px) {
 	main {
 		max-width: 700px;
-        grid-template-rows: var(--head-height-desktop) 3fr;
+		grid-template-rows: var(--head-height-desktop) 3fr;
 		grid-template-columns: 1fr 353px 1fr;
 	}
 	#uke-head {
 		background-size: auto var(--head-height-desktop);
+		font-size: 0.9em;
+	}
+	.logo {
+		margin-top: 8%;
+	}
+	.logo img {
+		width: 70%;
 	}
 	.head-left {
 		background-image: url(./image/head-left.png);
@@ -179,11 +295,13 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 }
 
 #fret-board.grid > div.string-down {
 	background-image: url(./image/string-down.svg), url(./image/fret.png);
 	background-position: calc(50% - 0px) 50%, bottom;
+	
 }
 
 #fret-board.grid > div .hint {
@@ -198,12 +316,5 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.message-board {
-	display: none;
-	position: absolute;
-	&.add-message {
-		display: block;
-	}
+	cursor: pointer;
 }

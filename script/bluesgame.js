@@ -7,13 +7,14 @@ class BluesGame {
 		this.gameOver = false;
 		this.startCredits = startCredits;
 		this.startRounds = startRounds;
+
 		this.backTrack = backTrack;
 		this.mode = mode;
 		BluesGame.gameScore.credits = this.startCredits;
 		BluesGame.gameScore.rounds = this.startRounds;
 		this.ukeHead = new Head(this.mode);
-		this.ukeHead.creditsBoard.innerText = this.startCredits;
-		this.ukeHead.roundsBoard.innerText = this.startRounds;
+		this.ukeHead.creditsBoard.innerText = this.twoDigits(this.startCredits); 
+		this.ukeHead.roundsBoard.innerText = this.twoDigits(this.startRounds);
 		console.log("BluesGame");
 
 		this.secondsSinceLastPick = 0;
@@ -25,6 +26,14 @@ class BluesGame {
 				this.ukeHead.updateMessageBoard("You are playing to slow, -1 credit.");
 			}
 		}, 1000);
+	}
+	twoDigits(number) {
+		let twoDigitNumber = number.toString();
+		if (twoDigitNumber.length === 1) {
+			return (twoDigitNumber = "0" + number);
+		} else {
+			return twoDigitNumber;
+		}
 	}
 	gameOverTest() {
 		if (BluesGame.gameScore.credits <= 0) {
@@ -65,12 +74,15 @@ class BluesGame {
 	}
 	addCredits(credit) {
 		BluesGame.gameScore.credits += credit;
-		this.ukeHead.updateCreditsBoard(BluesGame.gameScore.credits);
+		
+		this.ukeHead.updateCreditsBoard(this.twoDigits(BluesGame.gameScore.credits));
+		this.ukeHead.updateMessageBoard(`Wrong note, ${BluesGame.gameScore.credits} credit.`);
+		
 		this.gameOverTest();
 	}
 	addRounds(round) {
 		BluesGame.gameScore.rounds += round;
-		this.ukeHead.updateRoundsBoard(BluesGame.gameScore.rounds);
+		this.ukeHead.updateRoundsBoard(this.twoDigits(BluesGame.gameScore.rounds));
 		this.gameOverTest();
 	}
 }

@@ -37,7 +37,7 @@ class Head {
 		this.messageBoard.classList.add("add-message");
 		setTimeout(() => {
 			this.messageBoard.classList.remove("add-message");
-		}, 1700);
+		}, 2500);
 		//console.log(message);
 	}
 }
