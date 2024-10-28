@@ -9,6 +9,10 @@
       .cls-2 {
         fill: url(#linear-gradient);
       }
+
+      .cls-3 {
+        opacity: .5;
+      }
     </style>
     <linearGradient id="linear-gradient" x1="3" y1="25" x2="8" y2="25" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
@@ -19,6 +23,9 @@
       <stop offset="1" stop-color="#4d4d4d"/>
     </linearGradient>
   </defs>
+  <g class="cls-3">
+    <rect x="5" y="0" width="5" height="50"/>
+  </g>
   <rect class="cls-2" x="3" width="5" height="50"/>
   <rect class="cls-1" width="11" height="50"/>
 </svg>

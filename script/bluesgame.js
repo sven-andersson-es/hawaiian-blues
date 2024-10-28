@@ -19,7 +19,7 @@ class BluesGame {
 		this.secondsSinceLastPick = 0;
 		this.lastPickInterval = setInterval(() => {
 			this.secondsSinceLastPick += 1;
-			console.log(this.secondsSinceLastPick);
+			//console.log(this.secondsSinceLastPick);
 			if (this.secondsSinceLastPick % 5 === 0) {
 				this.addCredits(-1);
 				this.ukeHead.updateMessageBoard("You are playing to slow, -1 credit.");
@@ -70,6 +70,7 @@ class BluesGame {
 	}
 	addRounds(round) {
 		BluesGame.gameScore.rounds += round;
+		this.ukeHead.updateRoundsBoard(BluesGame.gameScore.rounds);
 		this.gameOverTest();
 	}
 }

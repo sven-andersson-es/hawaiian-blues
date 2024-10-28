@@ -26,8 +26,11 @@ class Note {
         }
 		this.element.addEventListener(listenerType, (event) => {
 			//prevent double touch zoom in safari
-            if (event.scale !== 1) event.preventDefault();
+            // if (event.scale !== 1) event.preventDefault();
+            console.log(event.scale);
+            
             this.game.secondsSinceLastPick = 0
+
             this.element.classList.add("string-down");
 		setTimeout(() => {
 			this.element.classList.remove("string-down");

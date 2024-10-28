@@ -29,25 +29,23 @@ body {
 	flex-direction: column;
 	align-content: center;
 	align-items: center;
-    height: 100vh;
-	touch-action: none;
+    height: 100dvh;
     background-color: aqua;
 	background-image: 
-    url(./image/body-bg-top-center.svg), 
     url(./image/body-bg-bottom-right.svg), 
     url(./image/body-bg-bottom-left.svg);
     background-position: 
-    top center,
     bottom right,
     bottom left;
     background-size: 
     20vh auto;
-	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-repeat: no-repeat, no-repeat;
 }
 
 main {
-	margin-top: 10vh;
-    height: 90vb;
+	margin-top: 10dvh;
+    height: 90dvh;
+    /* mobile viewport bug fix */
 	width: 70vw;
     max-width: 600px;
 }

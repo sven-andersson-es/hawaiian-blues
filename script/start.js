@@ -13,12 +13,8 @@ class StartGame {
 		this.backTrack.addEventListener(
 			"ended",
 			() => {
-				this.backTrack.currentTime = 0;
-				console.log(BluesGame.gameScore);
-				
                 this.backTrack.play();
 				this.game.addRounds(1);
-                this.game.ukeHead.updateRoundsBoard(BluesGame.gameScore.rounds);
 				if (BluesGame.gameScore.rounds % 5 === 0) {
 					this.game.addCredits(5);
                     this.game.ukeHead.updateMessageBoard("You made 5 rounds and you got 5 extra credits!")

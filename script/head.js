@@ -25,16 +25,16 @@ class Head {
 		this.creditsBoard.classList.add("add-credits");
 		setTimeout(() => {
 			this.creditsBoard.classList.remove("add-credits");
-		}, 1700);
-		console.log(credits);
+		}, 1400);
+		//console.log(credits);
 	}
 	updateRoundsBoard(rounds) {
 		this.roundsBoard.innerText = rounds;
 		this.roundsBoard.classList.add("add-rounds");
 		setTimeout(() => {
 			this.roundsBoard.classList.remove("add-rounds");
-		}, 1700);
-		console.log(rounds);
+		}, 1500);
+		//console.log(rounds);
 	}
 	updateMessageBoard(message) {
 		this.messageBoard.innerText = message;
@@ -42,6 +42,6 @@ class Head {
 		setTimeout(() => {
 			this.messageBoard.classList.remove("add-message");
 		}, 1700);
-		console.log(message);
+		//console.log(message);
 	}
 }
