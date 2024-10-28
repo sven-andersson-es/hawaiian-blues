@@ -109,7 +109,7 @@ main {
 #uke-head {
 	/* border: 2px solid red; */
 	width: 100%;
-	height: 100%%;
+	height: 100%;
 	background-image: url(./image/head-center.png);
 	background-size: auto var(--head-height-mobile);
 	background-repeat: no-repeat;

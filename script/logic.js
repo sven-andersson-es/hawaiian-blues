@@ -5,7 +5,7 @@ const startTheGame = (key, mode) => {
 
 const getWelcomeScreen = () => {
 	const ukeHead = document.getElementById("uke-head")
-    ukeHead.innerHTML = "";
+    //ukeHead.innerHTML = "";
     fretBoard.element.innerHTML = "";
 
 	fretBoard.element.classList.remove("grid");
