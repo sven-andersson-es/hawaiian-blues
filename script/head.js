@@ -4,13 +4,9 @@ class Head {
 		this.element = document.getElementById("uke-head");
 		console.log("New Class Head initiated");
 
-		this.creditsBoard = document.createElement("div");
-		this.creditsBoard.classList.add("credits-board");
-		this.element.appendChild(this.creditsBoard);
-
-		this.roundsBoard = document.createElement("div");
-		this.roundsBoard.classList.add("rounds-board");
-		this.element.appendChild(this.roundsBoard);
+		this.creditsBoard = document.getElementById("credits-board");
+        
+		this.roundsBoard = document.getElementById("rounds-board");
 
 		if (!document.querySelector(".message-board")) {
 			this.messageBoard = document.createElement("div");

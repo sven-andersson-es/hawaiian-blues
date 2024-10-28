@@ -1,11 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+/* latin-ext */
+@font-face {
+	font-family: "Inika";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./font/rnCm-x5X3QP-piTOT8YUsHXGcfI.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+		U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+		U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+	font-family: "Inika";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(./font/rnCm-x5X3QP-piTAT8YUsHXG.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+		U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+	font-family: "Inika";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(./font/rnCr-x5X3QP-pix7atM3knjsS_ulYHs.woff2) format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+		U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+		U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+	font-family: "Inika";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(./font/rnCr-x5X3QP-pix7atM5knjsS_ul.woff2) format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+		U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: digital numbers;
+	font-style: normal;
+	font-weight: 400;
+	src: local("Digital Numbers"),
+		url(./font/DigitalNumbers-Regular.woff) format("woff");
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-    
 }
 
+:root {
+	--head-height-desktop: 240px;
+	--head-height-mobile: 177px;
+}
 
 /* .inika-regular {
     font-family: "Inika", serif;
@@ -21,47 +76,87 @@
    */
 
 body {
-    font-size: 2.5vh;
-    font-family: "Inika", serif;
-    font-weight: 400;
-    font-style: normal;
+	font-size: 2.5vh;
+	font-family: "Inika", serif;
+	font-weight: 400;
+	font-style: normal;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
 	align-items: center;
-    height: 100dvh;
-    background-color: aqua;
-	background-image: 
-    url(./image/body-bg-bottom-right.svg), 
-    url(./image/body-bg-bottom-left.svg);
-    background-position: 
-    bottom right,
-    bottom left;
-    background-size: 
-    20vh auto;
+	height: 100dvh;
+	background-color: aqua;
+	background-image: url(./image/body-bg-bottom-right.svg),
+		url(./image/body-bg-bottom-left.svg);
+	background-position: bottom right, bottom left;
+	background-size: 30dvh auto;
 	background-repeat: no-repeat, no-repeat;
 }
 
 main {
-	margin-top: 10dvh;
-    height: 90dvh;
-    /* mobile viewport bug fix */
-	width: 70vw;
-    max-width: 600px;
+	margin-top: 0;
+	margin-bottom: 1dvh;
+	height: 98dvh;
+	/* mobile viewport bug fix */
+	width: 100dvw;
+	max-width: 600px;
+	display: grid;
+	grid-template-rows: var(--head-height-mobile) 3fr;
+	grid-template-columns: 0.6fr 260px 0.6fr;
+	row-gap: 0;
+	column-gap: 0;
 }
 #uke-head {
 	/* border: 2px solid red; */
 	width: 100%;
-	height: 20%;
+	height: 100%%;
+	background-image: url(./image/head-center.png);
+	background-size: auto var(--head-height-mobile);
+	background-repeat: no-repeat;
+	background-position: center bottom;
 }
+.head-left {
+	background-image: url(./image/head-left.png);
+	background-size: auto var(--head-height-mobile);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+.head-right {
+	background-image: url(./image/head-right.png);
+	background-size: auto var(--head-height-mobile);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+@media (width > 600px) {
+	main {
+		max-width: 700px;
+        grid-template-rows: var(--head-height-desktop) 3fr;
+		grid-template-columns: 1fr 353px 1fr;
+	}
+	#uke-head {
+		background-size: auto var(--head-height-desktop);
+	}
+	.head-left {
+		background-image: url(./image/head-left.png);
+		background-size: auto var(--head-height-desktop);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+	}
+	.head-right {
+		background-image: url(./image/head-right.png);
+		background-size: auto var(--head-height-desktop);
+		background-repeat: no-repeat;
+		background-position: left bottom;
+	}
+}
+
 #fret-board {
 	border-top: 8px solid white;
 	width: 100%;
-    
-	height: 70%;
-    background-image: 
-    url(./image/fretboard-wood-1.png);
-    background-size: cover;
+
+	height: 100%;
+	background-image: url(./image/fretboard-wood-1.png);
+	background-size: cover;
 }
 #fret-board.grid {
 	display: grid;
@@ -71,44 +166,43 @@ main {
 	column-gap: 0;
 }
 #fret-board.grid > div {
-    font-size: 1em;
+	font-size: 1em;
 	/* background: blue; */
 	/* border-bottom: 1px solid black; */
-    transition: 50ms;
-    /* background-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 67%, rgba(198,198,198,1) 100%); */
-    background-image: 
-    url(./image/string-up.svg),
-    url(./image/fret.png);
-    background-size: auto 100%, 100% 0.25em;
-    background-position: calc(50% - 0px) 50%, bottom;
-    background-repeat: no-repeat;
-    /* transition: 200ms; */
-    display: flex;
+	transition: 50ms;
+	/* background-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 67%, rgba(198,198,198,1) 100%); */
+	background-image: url(./image/string-up.svg), url(./image/fret.png);
+	background-size: auto 100%, 100% 0.25em;
+	background-position: calc(50% - 0px) 50%, bottom;
+	background-repeat: no-repeat;
+	/* transition: 200ms; */
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 #fret-board.grid > div.string-down {
-    background-image: url(./image/string-down.svg),url(./image/fret.png);
-    background-position: calc(50% - 0px) 50%, bottom;
+	background-image: url(./image/string-down.svg), url(./image/fret.png);
+	background-position: calc(50% - 0px) 50%, bottom;
 }
 
 #fret-board.grid > div .hint {
-    font-size: 0.9em;
-    font-weight: 700;
-    background-color: rgba(249, 163, 17, 0.5);
-    color: #222;
-    width: 2.2em;
-    height: 2.2em;
-    border-radius: 100%;
-    display: flex;
+	font-size: 0.8em;
+	font-weight: 700;
+	background-color: rgba(249, 163, 17, 0.5);
+	background-color: rgba(158, 176, 75, 0.5);
+	color: #222;
+	width: 2em;
+	height: 2em;
+	border-radius: 100%;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .message-board {
 	display: none;
-    position: absolute;
+	position: absolute;
 	&.add-message {
 		display: block;
 	}
