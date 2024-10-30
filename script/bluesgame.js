@@ -23,7 +23,7 @@ class BluesGame {
 			//console.log(this.secondsSinceLastPick);
 			if (this.secondsSinceLastPick % 5 === 0) {
 				this.addCredits(-1);
-				this.ukeHead.updateMessageBoard("You are playing to slow, -1 credit.");
+				this.ukeHead.updateMessageBoard("You are playing too slow, -1 credit.");
 			}
 		}, 1000);
 	}
@@ -76,7 +76,7 @@ class BluesGame {
 		BluesGame.gameScore.credits += credit;
 		
 		this.ukeHead.updateCreditsBoard(this.twoDigits(BluesGame.gameScore.credits));
-		this.ukeHead.updateMessageBoard(`Wrong note, ${BluesGame.gameScore.credits} credit.`);
+		this.ukeHead.updateMessageBoard(`Wrong note, ${credit} credit.`);
 		
 		this.gameOverTest();
 	}

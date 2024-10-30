@@ -15,9 +15,9 @@ class StartGame {
 			() => {
                 this.backTrack.play();
 				this.game.addRounds(1);
-				if (BluesGame.gameScore.rounds % 5 === 0) {
+				if (BluesGame.gameScore.rounds % 1 === 0) {
 					this.game.addCredits(5);
-                    this.game.ukeHead.updateMessageBoard("You made 5 rounds and you got 5 extra credits!")
+                    this.game.ukeHead.updateMessageBoard("You made 1 round got 5 extra credits!")
 				}
 			},
 			false

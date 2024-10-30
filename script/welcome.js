@@ -20,10 +20,20 @@ class Welcome {
 		this.form = document.createElement("form");
 		//this.paragraph.innerText = "You will play a pentatonic blues scale in C major. Follow the back track music. Only use the notes in the scale you select.";
 		fretBoard.element.appendChild(this.form);
+		
+		this.selectDiv = document.createElement("div");
+		this.selectDiv.classList.add("select");
+		
+		// <label for="standard-select">Standard Select</label>
+		this.labelSelectKey = document.createElement("label");
+        this.labelSelectKey.setAttribute("for", "standard-select");
+		this.labelSelectKey.innerText = "Select the Key"
+		this.form.appendChild(this.labelSelectKey);
 
 		//select key
 		this.selectKey = document.createElement("select");
 		this.selectKey.classList.add("select-key");
+        this.selectKey.setAttribute("id", "standard-select");
         this.selectKey.setAttribute("name", "key");
 		this.selectKeyOptions = availableKeys.forEach((element) => {
 			const optionElement = document.createElement("option");
@@ -33,7 +43,8 @@ class Welcome {
 			this.selectKey.appendChild(optionElement);
 		});
 
-		this.form.appendChild(this.selectKey);
+		this.selectDiv.appendChild(this.selectKey);
+		this.form.appendChild(this.selectDiv);
 
 		//select mode (learn or game)
 		this.selectMode = document.createElement("div");
