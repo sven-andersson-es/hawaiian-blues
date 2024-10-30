@@ -1,19 +1,19 @@
 class Welcome {
 	constructor() {
 		//header 1
-		this.headerOne = document.createElement("h1");
-		this.headerOne.innerText = "Hawaiian Blues";
-		fretBoard.element.appendChild(this.headerOne);
+		// this.headerOne = document.createElement("h1");
+		// this.headerOne.innerText = "Hawaiian Blues";
+		// fretBoard.element.appendChild(this.headerOne);
 
 		//header2
 		this.headerTwo = document.createElement("h2");
-		this.headerTwo.innerText = "Play the blues solo on the Uke";
+		this.headerTwo.innerText = "Play the blues solo on the Ukulele";
 		fretBoard.element.appendChild(this.headerTwo);
 
 		//paragraph
 		this.paragraph = document.createElement("p");
 		this.paragraph.innerText =
-			"You will play a pentatonic blues scale in C major. Follow the back track music. Only use the notes in the key you select.";
+			"You will play a pentatonic blues scale in the key you select. Only use the notes in the selected key.";
 		fretBoard.element.appendChild(this.paragraph);
 
 		//form
@@ -27,6 +27,7 @@ class Welcome {
 		// <label for="standard-select">Standard Select</label>
 		this.labelSelectKey = document.createElement("label");
         this.labelSelectKey.setAttribute("for", "standard-select");
+		this.labelSelectKey.classList.add("select-label");
 		this.labelSelectKey.innerText = "Select the Key"
 		this.form.appendChild(this.labelSelectKey);
 
@@ -55,6 +56,8 @@ class Welcome {
 		];
 		this.selectModeOptions = selectModes.forEach((element, index) => {
 			const radioWrapper = document.createElement("div");
+			radioWrapper.classList.add("radio");
+
 			const optionElement = document.createElement("input");
 			optionElement.setAttribute("type", "radio");
 			optionElement.setAttribute("name", "mode");
@@ -67,6 +70,7 @@ class Welcome {
 			const labelElement = document.createElement("label");
 			labelElement.innerText = element.label;
 			labelElement.setAttribute("for", element.mode);
+			labelElement.classList.add("radio-label");
 			radioWrapper.appendChild(optionElement);
 			radioWrapper.appendChild(labelElement);
 			this.selectMode.appendChild(radioWrapper);

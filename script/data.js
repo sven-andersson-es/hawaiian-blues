@@ -43,7 +43,7 @@ const fretBoardData = [
 
 const availableKeys = [
 	{key: "C", description: "C Major"},
-	{key: "E", description: "E Major"},
+	{key: "Cm", description: "C Minor"},
 ]
 
 const pentatonicScaleData = {
@@ -51,4 +51,9 @@ const pentatonicScaleData = {
 		scale: ["C", "D", "E", "G", "A"],
 		backTrack: "c-back-track-02.mp3",
 	},
+	Cm: {
+		scale: ["C", "Eb", "F", "G", "Bb"],
+		backTrack: "c-back-track-02.mp3",
+	}
+
 };

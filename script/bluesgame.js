@@ -44,9 +44,14 @@ class BluesGame {
 			this.lastPickInterval;
 			fretBoard.element.classList.remove("grid");
 			fretBoard.element.innerHTML = "";
-			const gameOverDivMessage = document.createElement("div");
-			const gameOverDivRounds = document.createElement("div");
+			const gameOverDivMessage = document.createElement("p");
+			gameOverDivMessage.classList.add("game-over");
+			const gameOverDivRounds = document.createElement("p");
+			const gameOverButtonDiv = document.createElement("div");
+			gameOverButtonDiv.classList.add("game-over-button")
 			const gameOverButton = document.createElement("button");
+			gameOverButton.classList.add("end")
+			gameOverButtonDiv.appendChild(gameOverButton);
 			const gameOverMessage = `You have no credits left and the game is over.`;
 			const finalRounds = BluesGame.gameScore.rounds;
 			console.log(finalRounds);
@@ -65,7 +70,7 @@ class BluesGame {
 			gameOverButton.innerText = "Re-start";
 			fretBoard.element.appendChild(gameOverDivMessage);
 			fretBoard.element.appendChild(gameOverDivRounds);
-			fretBoard.element.appendChild(gameOverButton);
+			fretBoard.element.appendChild(gameOverButtonDiv);
 
 			gameOverButton.addEventListener("click", () => {
 				getWelcomeScreen();
