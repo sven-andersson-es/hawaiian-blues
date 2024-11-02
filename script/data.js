@@ -52,7 +52,7 @@ const pentatonicScaleData = {
 		backTrack: "c-back-track-02.mp3",
 	},
 	Cm: {
-		scale: ["C", "Eb", "F", "G", "Bb"],
+		scale: ["C", "Eb", "F", "F#", "G", "Bb"],
 		backTrack: "c-back-track-02.mp3",
 	}
 
