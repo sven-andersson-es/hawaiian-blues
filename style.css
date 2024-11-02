@@ -171,7 +171,7 @@ main {
 	background-position: center bottom;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: end;
 	/* align-items: center; */
 }
 .logo {
