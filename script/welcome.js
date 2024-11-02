@@ -95,7 +95,7 @@ class Welcome {
             for (const keyValue of formData.entries()) {
                 formDataObject.push(keyValue[1])              
             }
-            console.log(formDataObject);
+            //console.log(formDataObject);
             fretBoard.element.innerHTML = "";
 			startTheGame(formDataObject[0], formDataObject[1]);
 		});

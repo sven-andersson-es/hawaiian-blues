@@ -27,7 +27,7 @@ class Note {
 		this.element.addEventListener(listenerType, (event) => {
 			//prevent double touch zoom in safari
             // if (event.scale !== 1) event.preventDefault();
-            console.log(event.scale);
+            //console.log(event.scale);
             
             this.game.secondsSinceLastPick = 0
 
@@ -38,7 +38,7 @@ class Note {
             this.stringSound.load();
 			this.stringSound.play();
 			if (this.scale.validNotes.indexOf(this.note) === -1) {
-				console.log("Wrong note!");
+				//console.log("Wrong note!");
 				this.game.addCredits(-1);
 			}
 

@@ -40,7 +40,7 @@ class StartGame {
 	}
 	gameOverTest() {
 		if (BluesGame.gameScore.credits <= 0) {
-			console.log("Game Over!!");
+			//console.log("Game Over!!");
 			this.gameOver = true;
 			this.backTrack.pause();
 			getWelcomeScreen();

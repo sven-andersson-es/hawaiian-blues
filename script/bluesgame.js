@@ -15,7 +15,7 @@ class BluesGame {
 		this.ukeHead = new Head(this.mode);
 		this.ukeHead.creditsBoard.innerText = this.twoDigits(this.startCredits); 
 		this.ukeHead.roundsBoard.innerText = this.twoDigits(this.startRounds);
-		console.log("BluesGame");
+		//console.log("BluesGame");
 
 		this.secondsSinceLastPick = 0;
 		this.lastPickInterval = setInterval(() => {
@@ -37,7 +37,7 @@ class BluesGame {
 	}
 	gameOverTest() {
 		if (BluesGame.gameScore.credits <= 0) {
-			console.log("Game Over!!");
+			//console.log("Game Over!!");
 			this.gameOver = true;
 			this.backTrack.pause();
 			clearInterval(this.lastPickInterval);
@@ -54,7 +54,7 @@ class BluesGame {
 			gameOverButtonDiv.appendChild(gameOverButton);
 			const gameOverMessage = `You have no credits left and the game is over.`;
 			const finalRounds = BluesGame.gameScore.rounds;
-			console.log(finalRounds);
+			//console.log(finalRounds);
 
 			let roundsMessage = "";
 			if (finalRounds === 0) {

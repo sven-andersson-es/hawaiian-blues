@@ -2,7 +2,7 @@ class Head {
 	constructor(mode) {
 		this.mode = mode;
 		this.element = document.getElementById("uke-head");
-		console.log("New Class Head initiated");
+		//console.log("New Class Head initiated");
 
 		this.creditsBoard = document.getElementById("credits-board");
         
